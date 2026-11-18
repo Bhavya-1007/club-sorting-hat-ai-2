@@ -1,0 +1,131 @@
+{
+  "_note": "Quiz questions. You can change text, hints, and order freely. Do NOT change an 'id' or the wording of an option without also updating clubs.json (option text is matched against club tags) and the scoring code in app.js. See README.md.",
+  "questions": [
+    {
+      "id": "motivation",
+      "type": "multi",
+      "max": 2,
+      "required": true,
+      "text": "What is your main reason for joining a club?",
+      "hint": "Pick up to 2.",
+      "options": [
+        "Build my resume / career",
+        "Explore a hobby",
+        "Make friends / social",
+        "Give back / community service",
+        "Learn a new skill",
+        "Connect with my culture or identity",
+        "Compete (sports or competitions)"
+      ]
+    },
+    {
+      "id": "college",
+      "type": "select",
+      "required": false,
+      "text": "What college or major are you in?",
+      "hint": "Pick the Penn State college your major belongs to.",
+      "label": "Your Penn State college",
+      "placeholder": "Choose your college",
+      "options": [
+        "Agricultural Sciences",
+        "Arts & Architecture",
+        "Business (Smeal)",
+        "Communications (Bellisario)",
+        "Earth & Mineral Sciences",
+        "Education",
+        "Engineering",
+        "Health & Human Development",
+        "Information Sciences & Technology",
+        "Liberal Arts",
+        "Nursing",
+        "Science (Eberly)",
+        "Undecided"
+      ]
+    },
+    {
+      "id": "majorRelated",
+      "type": "single",
+      "required": false,
+      "text": "Do you want a club related to your major?",
+      "hint": "",
+      "options": ["Yes", "No", "Doesn't matter"]
+    },
+    {
+      "id": "interests",
+      "type": "multi",
+      "max": 3,
+      "required": true,
+      "text": "Pick up to 3 interest areas.",
+      "hint": "Pick up to 3.",
+      "options": [
+        "Engineering & tech",
+        "Business & entrepreneurship",
+        "Arts & music",
+        "Media & writing",
+        "Outdoors & fitness",
+        "Gaming",
+        "Service & THON",
+        "Cultural & international",
+        "Faith & spirituality",
+        "Politics & advocacy",
+        "Science & research",
+        "Health & wellness"
+      ]
+    },
+    {
+      "id": "hours",
+      "type": "single",
+      "required": false,
+      "text": "How much time can you give per week?",
+      "hint": "",
+      "options": ["Under 2 hours", "2-5 hours", "5-10 hours", "10+ hours"]
+    },
+    {
+      "id": "freeDays",
+      "type": "multi",
+      "required": false,
+      "text": "Which days are you usually free in the evening?",
+      "hint": "Pick all that apply.",
+      "options": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    },
+    {
+      "id": "size",
+      "type": "single",
+      "required": false,
+      "text": "What size group do you prefer?",
+      "hint": "",
+      "options": ["Small (under 30)", "Medium (30-100)", "Large (100+)", "No preference"]
+    },
+    {
+      "id": "vibe",
+      "type": "slider",
+      "required": false,
+      "min": 1,
+      "max": 5,
+      "default": 3,
+      "text": "What vibe do you want?",
+      "hint": "Drag the slider or use the arrow keys.",
+      "label": "Vibe",
+      "minLabel": "Relaxed and casual",
+      "maxLabel": "Competitive and high commitment",
+      "valueLabels": ["Very relaxed", "Relaxed", "Balanced", "Competitive", "Very competitive"]
+    },
+    {
+      "id": "experience",
+      "type": "single",
+      "required": false,
+      "text": "How much experience do you have in your interest area?",
+      "hint": "",
+      "options": ["None, beginner welcome", "Some", "A lot"]
+    },
+    {
+      "id": "contact",
+      "type": "multi",
+      "required": false,
+      "scored": false,
+      "text": "How do you want to hear about events?",
+      "hint": "Pick all that apply. This doesn't change your matches; it highlights the right links on your results.",
+      "options": ["Instagram", "GroupMe", "Email", "In-person at the HUB or fair"]
+    }
+  ]
+}

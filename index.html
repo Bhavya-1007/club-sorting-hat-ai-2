@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Club Sorting Hat</title>
+  <meta name="description" content="Answer 10 quick questions and get matched with Penn State clubs that fit you. A student prototype for EDSGN 367.">
+  <meta name="theme-color" content="#1E407C">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <button type="button" class="brand" id="home-btn" aria-label="Club Sorting Hat, go to start">
+        <svg class="brand-hat" viewBox="0 0 120 110" aria-hidden="true" focusable="false"><use href="#hat-icon"></use></svg>
+        <span>Club Sorting Hat</span>
+      </button>
+      <nav aria-label="Main">
+        <button type="button" class="nav-link" id="nav-browse">Browse all clubs</button>
+      </nav>
+    </div>
+  </header>
+
+  <p id="test-banner" class="test-banner" hidden>Test mode is on. Timing is logged to the browser console.</p>
+
+  <main id="main" class="wrap">
+    <!-- 1. Landing -->
+    <section id="screen-landing" class="screen landing" aria-labelledby="landing-title">
+      <svg class="hero-hat" viewBox="0 0 120 110" aria-hidden="true" focusable="false"><use href="#hat-icon"></use></svg>
+      <h1 id="landing-title" tabindex="-1" data-focus>Club Sorting Hat</h1>
+      <p class="lead">Answer 10 quick questions and we'll match you with Penn State clubs that fit you.</p>
+      <p class="meta">About 3 minutes &middot; No login &middot; Nothing is saved</p>
+      <button type="button" class="btn btn-primary btn-lg" id="start-btn" disabled>Start the quiz</button>
+      <p id="load-error" class="error-box" role="alert" hidden></p>
+      <button type="button" class="btn btn-link" id="landing-browse">Or browse every club</button>
+      <p class="audience">Made for first-years, transfer, 2+2, and international students &mdash; before or after the Involvement Fair.</p>
+    </section>
+
+    <!-- 2. Quiz -->
+    <section id="screen-quiz" class="screen" aria-labelledby="question-title" hidden>
+      <div class="progress-wrap">
+        <p id="progress-text" class="progress-text">Question 1 of 10</p>
+        <div class="progress" id="progress" role="progressbar" aria-labelledby="progress-text" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+      <form id="quiz-form" class="quiz-card" novalidate>
+        <h2 id="question-title" class="question-title" tabindex="-1" data-focus></h2>
+        <p id="question-hint" class="hint"></p>
+        <div id="question-body"></div>
+        <p id="question-status" class="status" aria-live="polite"></p>
+        <p id="question-error" class="error" role="alert"></p>
+        <div class="quiz-nav">
+          <button type="button" class="btn btn-secondary" id="back-btn">Back</button>
+          <button type="button" class="btn btn-link" id="skip-btn">Skip</button>
+          <button type="submit" class="btn btn-primary" id="next-btn">Next</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Loading / sorting animation -->
+    <section id="screen-loading" class="screen loading" aria-labelledby="loading-title" hidden>
+      <svg class="sorting-hat" viewBox="0 0 120 110" aria-hidden="true" focusable="false"><use href="#hat-icon"></use></svg>
+      <h2 id="loading-title" tabindex="-1" data-focus>Sorting you<span class="dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span></h2>
+      <p class="meta">Weighing your interests, schedule, and vibe.</p>
+    </section>
+
+    <!-- 3. Results -->
+    <section id="screen-results" class="screen" aria-labelledby="results-title" hidden>
+      <h2 id="results-title" tabindex="-1" data-focus>Your top club matches</h2>
+      <p class="lead-sm">Ranked by how well each club fits your answers. Use them as a starting point, then go meet the clubs.</p>
+
+      <div class="test-tools" id="test-tools" hidden>
+        <button type="button" class="btn btn-secondary btn-small" id="copy-summary">Copy session summary</button>
+        <span id="copy-status" class="status" aria-live="polite"></span>
+      </div>
+
+      <details class="filter-bar filter-toggle" id="results-filters">
+        <summary class="filter-label">Filter your matches</summary>
+        <div class="filter-fields">
+        <div class="field">
+          <label for="f-category">Category</label>
+          <select id="f-category" data-filter="category"></select>
+        </div>
+        <div class="field">
+          <label for="f-day">Meeting day</label>
+          <select id="f-day" data-filter="day"></select>
+        </div>
+        <div class="field">
+          <label for="f-hours">Time commitment</label>
+          <select id="f-hours" data-filter="hours"></select>
+        </div>
+        <button type="button" class="btn btn-link btn-small" id="clear-filters">Clear filters</button>
+        </div>
+      </details>
+      <p id="results-count" class="status" aria-live="polite"></p>
+
+      <ol id="top-results" class="card-list"></ol>
+      <p id="results-empty" class="empty" hidden>No matches with these filters. Try clearing one.</p>
+
+      <section id="also-section" class="also" aria-labelledby="also-title">
+        <h3 id="also-title">Also worth a look</h3>
+        <ol id="also-results" class="card-list compact-list" start="6"></ol>
+      </section>
+
+      <div class="results-actions">
+        <button type="button" class="btn btn-primary" id="retake-btn">Retake quiz</button>
+        <button type="button" class="btn btn-secondary" id="results-browse">Browse all clubs</button>
+      </div>
+
+      <div class="feedback-bar">
+        <a id="feedback-link" href="#" target="_blank" rel="noopener">Give feedback<span class="visually-hidden"> (opens in a new tab)</span></a>
+      </div>
+    </section>
+
+    <!-- 4. Browse all -->
+    <section id="screen-browse" class="screen" aria-labelledby="browse-title" hidden>
+      <h2 id="browse-title" tabindex="-1" data-focus>Browse all clubs</h2>
+      <div class="filter-bar browse-filters" role="search">
+        <div class="field field-wide">
+          <label for="b-search">Search clubs</label>
+          <input type="search" id="b-search" placeholder="Try &ldquo;music&rdquo; or &ldquo;resume&rdquo;" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="b-category">Category</label>
+          <select id="b-category" data-browse-filter="category"></select>
+        </div>
+        <div class="field">
+          <label for="b-day">Meeting day</label>
+          <select id="b-day" data-browse-filter="day"></select>
+        </div>
+        <div class="field">
+          <label for="b-hours">Time commitment</label>
+          <select id="b-hours" data-browse-filter="hours"></select>
+        </div>
+      </div>
+      <p id="browse-count" class="status" aria-live="polite"></p>
+      <ul id="browse-list" class="card-list"></ul>
+      <div class="results-actions">
+        <button type="button" class="btn btn-primary" id="browse-to-results" hidden>Back to my matches</button>
+        <button type="button" class="btn btn-secondary" id="browse-start">Take the quiz</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Student prototype for EDSGN 367 - not an official Penn State site.</p>
+  </footer>
+
+  <!-- Original hat icon (simple shapes, reused via <use>) -->
+  <svg width="0" height="0" class="svg-defs" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="hat-icon" viewBox="0 0 120 110">
+        <path d="M34 88 C40 66 46 48 54 34 C60 22 70 12 86 10 C80 16 76 24 76 32 C80 50 86 68 88 88 Z" fill="#2B5299"/>
+        <path d="M86 10 C92 12 96 18 94 26 C90 22 84 22 80 24 Z" fill="#1E407C"/>
+        <path d="M36 78 C52 84 70 84 87 78 L89 88 C70 94 52 94 34 88 Z" fill="#F2A900"/>
+        <path d="M62 46 l3 6 6 1 -4.5 4 1 6.5 -5.5 -3 -5.5 3 1 -6.5 -4.5 -4 6 -1 Z" fill="#F2A900"/>
+        <ellipse cx="60" cy="92" rx="54" ry="11" fill="#1E407C"/>
+        <ellipse cx="60" cy="89" rx="30" ry="4" fill="#142B55"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <script src="app.js"></script>
+</body>
+</html>
