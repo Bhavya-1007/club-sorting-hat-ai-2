@@ -1,5 +1,5 @@
 {
-  "_note": "Quiz questions. You can change text, hints, and order freely. Do NOT change an 'id' or the wording of an option without also updating clubs.json (option text is matched against club tags) and the scoring code in app.js. See README.md.",
+  "_note": "Original ten-question quiz. Stable IDs and option strings are validated by the server. Update curated club tags if options change. Optional unknown preferences do not establish facts about organizations.",
   "questions": [
     {
       "id": "motivation",
@@ -48,7 +48,11 @@
       "required": false,
       "text": "Do you want a club related to your major?",
       "hint": "",
-      "options": ["Yes", "No", "Doesn't matter"]
+      "options": [
+        "Yes",
+        "No",
+        "Doesn't matter"
+      ]
     },
     {
       "id": "interests",
@@ -69,7 +73,8 @@
         "Faith & spirituality",
         "Politics & advocacy",
         "Science & research",
-        "Health & wellness"
+        "Health & wellness",
+        "THON"
       ]
     },
     {
@@ -78,7 +83,12 @@
       "required": false,
       "text": "How much time can you give per week?",
       "hint": "",
-      "options": ["Under 2 hours", "2-5 hours", "5-10 hours", "10+ hours"]
+      "options": [
+        "Under 2 hours",
+        "2-5 hours",
+        "5-10 hours",
+        "10+ hours"
+      ]
     },
     {
       "id": "freeDays",
@@ -86,7 +96,15 @@
       "required": false,
       "text": "Which days are you usually free in the evening?",
       "hint": "Pick all that apply.",
-      "options": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ]
     },
     {
       "id": "size",
@@ -94,7 +112,12 @@
       "required": false,
       "text": "What size group do you prefer?",
       "hint": "",
-      "options": ["Small (under 30)", "Medium (30-100)", "Large (100+)", "No preference"]
+      "options": [
+        "Small (under 30)",
+        "Medium (30-100)",
+        "Large (100+)",
+        "No preference"
+      ]
     },
     {
       "id": "vibe",
@@ -108,7 +131,13 @@
       "label": "Vibe",
       "minLabel": "Relaxed and casual",
       "maxLabel": "Competitive and high commitment",
-      "valueLabels": ["Very relaxed", "Relaxed", "Balanced", "Competitive", "Very competitive"]
+      "valueLabels": [
+        "Very relaxed",
+        "Relaxed",
+        "Balanced",
+        "Competitive",
+        "Very competitive"
+      ]
     },
     {
       "id": "experience",
@@ -116,16 +145,26 @@
       "required": false,
       "text": "How much experience do you have in your interest area?",
       "hint": "",
-      "options": ["None, beginner welcome", "Some", "A lot"]
+      "options": [
+        "None, beginner welcome",
+        "Some",
+        "A lot"
+      ]
     },
     {
-      "id": "contact",
-      "type": "multi",
+      "id": "budget",
+      "type": "single",
       "required": false,
-      "scored": false,
-      "text": "How do you want to hear about events?",
-      "hint": "Pick all that apply. This doesn't change your matches; it highlights the right links on your results.",
-      "options": ["Instagram", "GroupMe", "Email", "In-person at the HUB or fair"]
+      "text": "How much would you be comfortable spending on a club per semester?",
+      "hint": "Optional. Unknown costs are not treated as free.",
+      "options": [
+        "Free only",
+        "Up to $25",
+        "$26–$50",
+        "$51–$100",
+        "Over $100",
+        "No preference"
+      ]
     }
   ]
 }

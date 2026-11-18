@@ -1,7 +1,7 @@
 /* Club Sorting Hat — app.js
    Plain JavaScript, no build step. Sections:
-   1. Config (edit these)   2. State + helpers   3. Data loading
-   4. Quiz                  5. Matching algorithm (scoreClub)
+   1. Config               2. State + helpers   3. Data loading
+   4. Quiz                  5. Server recommendations
    6. Results               7. Browse all        8. Test mode   9. Startup */
 'use strict';
 
@@ -9,47 +9,19 @@
    1. CONFIG — the knobs your team is most likely to change
    ========================================================================== */
 
-// Google Form the "Give feedback" link opens. Paste your form's share link here.
-const FEEDBACK_FORM_URL = 'https://forms.gle/REPLACE-WITH-YOUR-FORM-ID';
-
-// Maximum points each criterion can earn. They add up to 100.
-// When a criterion doesn't apply (question skipped, "Doesn't matter", "No preference"),
-// its points are redistributed proportionally across the criteria that do apply.
-const SCORING_WEIGHTS = {
-  interest: 30,   // interest areas (Q4) vs club.interestTags
-  motivation: 20, // reasons for joining (Q1) vs club.motivationTags
-  time: 15,       // weekly hours (Q5) vs club.weeklyHours
-  schedule: 10,   // free evenings (Q6) vs club.meetingDays
-  major: 10,      // college (Q2) + "related to major?" (Q3) vs club.relatedColleges
-  vibe: 10,       // relaxed-to-competitive slider (Q8) vs club.vibe
-  size: 5,        // preferred group size (Q7) vs club.size
-};
-
-// Subtracted when the student has no experience and the club is not beginner friendly.
-const BEGINNER_PENALTY = 15;
-
-// Student said "Yes, related to my major" and the club is open to any major ("Any"):
-// the share of the major points it still earns (0 = none, 1 = full).
-const MAJOR_OPEN_TO_ALL_SHARE = 0.3;
-
-const SORTING_DELAY_MS = 1500; // length of the "Sorting you..." screen
-const TOP_COUNT = 5;           // main results
-const ALSO_COUNT = 3;          // "Also worth a look" (matches 6-8)
-
+const SORTING_DELAY_MS = 800;
+const TOP_COUNT = 5;
+const ALSO_COUNT = 3;
 const HOURS_BUCKETS = ['Under 2 hours', '2-5 hours', '5-10 hours', '10+ hours'];
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const SIZE_LABELS = { Small: 'Small (under 30)', Medium: 'Medium (30-100)', Large: 'Large (100+)' };
-
-// Friendlier wording of the Q1 options for "Why you matched" bullets.
-const MOTIVATION_PHRASES = {
-  'Build my resume / career': 'build your resume and career',
-  'Explore a hobby': 'explore a hobby',
-  'Make friends / social': 'make friends',
-  'Give back / community service': 'give back to the community',
-  'Learn a new skill': 'learn a new skill',
-  'Connect with my culture or identity': 'connect with your culture or identity',
-  'Compete (sports or competitions)': 'compete',
-};
+let requestController = null;
+let requestVersion = 0;
+let browseController = null;
+let browseOffset = 0;
+let browseNextOffset = null;
+let browseTimer = null;
+let catalogMeta = {};
 
 const TEST_MODE = new URLSearchParams(window.location.search).get('test') === '1';
 
@@ -150,11 +122,13 @@ async function fetchJson(path) {
 
 async function loadData() {
   const [questionData, clubData] = await Promise.all([
-    fetchJson('data/questions.json'),
-    fetchJson('data/clubs.json'),
+    fetchJson('questions.json'),
+    fetchJson('/api/clubs?limit=1'),
   ]);
   state.questions = questionData.questions;
   state.clubs = clubData.clubs;
+  catalogMeta = clubData;
+  document.querySelectorAll('[data-catalog-count]').forEach(node=>node.textContent=clubData.catalogTotal+' sourced listings · '+clubData.recommendationEligibleTotal+' available for recommendations');
 }
 
 function showLoadError(error) {
@@ -164,9 +138,9 @@ function showLoadError(error) {
   box.replaceChildren(
     el('strong', { text: "Couldn't load the club data. " }),
     onFile
-      ? el('span', {}, 'Browsers block reading data files when a page is opened straight from your computer. Run a tiny local server in this folder, for example ',
-          el('code', { text: 'python -m http.server' }), ', then open ', el('code', { text: 'http://localhost:8000' }), '. See README.md.')
-      : el('span', { text: `Check that data/clubs.json and data/questions.json exist and are valid JSON. (${error.message})` }),
+      ? el('span', {}, 'Open this application through its backend server: ',
+          el('code', { text: 'node scripts/dev.mjs' }), ', then open ', el('code', { text: 'http://127.0.0.1:3000' }), '. See README.md.')
+      : el('span', { text: `Check that clubs.json and questions.json exist and are valid JSON. (${error.message})` }),
   );
   console.error('[Club Sorting Hat] Data failed to load:', error);
 }
@@ -176,6 +150,14 @@ function showLoadError(error) {
    ========================================================================== */
 
 function startQuiz() {
+  requestVersion++;
+  requestController?.abort();
+  state.results = [];
+  $('#browse-to-results').hidden = true;
+  $('#top-results').replaceChildren();
+  $('#also-results').replaceChildren();
+  $('#recommendation-status').textContent = '';
+  $('#loading-error').hidden = true;
   state.answers = {};
   state.skipped = new Set();
   state.index = 0;
@@ -268,7 +250,13 @@ function renderSelect(q, saved) {
     state.skipped.delete(q.id);
     $('#question-error').textContent = '';
   });
-  return el('div', { class: 'field' }, el('label', { for: id, text: q.label || q.text }), select);
+  const field=el('div', { class: 'field' }, el('label', { for: id, text: q.label || q.text }), select);
+  if(q.id==='college'){
+    const major=el('input',{id:'major-detail',type:'text',maxlength:'80',placeholder:'For example, Aerospace Engineering',value:state.answers.major||''});
+    major.addEventListener('input',()=>{if(major.value.trim())state.answers.major=major.value.trim();else delete state.answers.major;});
+    field.append(el('label',{for:'major-detail',text:'Major (optional)'}),major);
+  }
+  return field;
 }
 
 function sliderText(q, value) {
@@ -357,143 +345,49 @@ function goBack() {
   renderQuestion();
 }
 
-function finishQuiz() {
+async function finishQuiz() {
+  if(requestController&&!requestController.signal.aborted)return;
   state.timing.quizEnd = performance.now();
+  requestController?.abort();
+  const controller = new AbortController();
+  requestController = controller;
+  const version = ++requestVersion;
+  $('#loading-error').hidden = true;
+  $('#loading-progress').hidden = false;
   showScreen('loading');
-  window.setTimeout(() => {
-    state.results = rankClubs(state.clubs, state.answers);
+  const timeout = setTimeout(() => controller.abort(), 32000);
+  try {
+    const [response] = await Promise.all([
+      fetch('/api/recommendations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ answers: state.answers }), signal: controller.signal }),
+      new Promise(resolve => setTimeout(resolve, SORTING_DELAY_MS)),
+    ]);
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.error || 'Recommendations could not be generated.');
+    if (version !== requestVersion) return;
+    if (!['ai','fallback','empty'].includes(payload.mode) || !Array.isArray(payload.recommendations)) throw new Error('Unexpected recommendation response.');
+    state.results = payload.recommendations.map(result => {
+      const club = result.club;
+      if(club?.id !== result.clubId) throw new Error('Invalid catalog result.');
+      if (!club) throw new Error('The catalog has changed. Reload and try again.');
+      return { ...result, club };
+    });
+    $('#recommendation-status').textContent = payload.message;
+    $('#score-note').textContent = payload.scoreNote;
     syncFilterControls();
     renderResults();
-    // Filters start open on wide screens, collapsed on phones.
     $('#results-filters').open = window.matchMedia('(min-width: 640px)').matches;
     showScreen('results');
     $('#browse-to-results').hidden = false;
     $('#copy-status').textContent = '';
     if (TEST_MODE) logSession();
-  }, SORTING_DELAY_MS);
+  } catch (error) {
+    if (version !== requestVersion) return;
+    $('#loading-progress').hidden = true;
+    $('#loading-error').hidden = false;
+    $('#recommendation-error').textContent = error.name === 'AbortError' ? 'The request timed out. Try again or browse the verified clubs.' : error.message;
+    $('#retry-recommendations').focus();
+  } finally { clearTimeout(timeout); if(version===requestVersion)requestController=null; }
 }
-
-/* ==========================================================================
-   5. MATCHING ALGORITHM
-   ========================================================================== */
-
-/**
- * scoreClub(club, answers) -> { score, rawScore, penalty, criteria, reasons }
- *
- * How it works:
- * - Each criterion in SCORING_WEIGHTS gets a "fraction" from 0 to 1 for how well
- *   the club fits, or null when the criterion doesn't apply (the student skipped the
- *   question, said "Doesn't matter", or picked "No preference").
- * - Score = (sum of weight x fraction for applicable criteria) / (sum of applicable
- *   weights) x 100. Dividing by only the applicable weights is what redistributes the
- *   points of skipped criteria proportionally, so skipping never hurts a club.
- * - Then BEGINNER_PENALTY is subtracted if the student has no experience and the club
- *   isn't beginner friendly. The final score is clamped to 0-100 and rounded.
- * - Every criterion carries a human-readable reason. The ones that earned the most
- *   points become the "Why you matched" bullets.
- */
-function scoreClub(club, answers) {
-  const criteria = [];
-  const add = (key, fraction, reason) => criteria.push({ key, weight: SCORING_WEIGHTS[key], fraction, reason });
-
-  // Interest overlap: share of the student's interest picks that the club covers.
-  const interests = answers.interests || [];
-  if (interests.length) {
-    const hits = interests.filter(tag => club.interestTags.includes(tag));
-    add('interest', hits.length / interests.length,
-      hits.length ? `Matches your interest in ${joinList(hits)}` : null);
-  }
-
-  // Motivation overlap: share of the student's reasons for joining that the club supports.
-  const motives = answers.motivation || [];
-  if (motives.length) {
-    const hits = motives.filter(tag => club.motivationTags.includes(tag));
-    add('motivation', hits.length / motives.length,
-      hits.length ? `A good place to ${joinList(hits.map(h => MOTIVATION_PHRASES[h] || h.toLowerCase()))}` : null);
-  }
-
-  // Time commitment: full points for the same bucket, half for one bucket away.
-  if (answers.hours) {
-    const gap = Math.abs(HOURS_BUCKETS.indexOf(answers.hours) - HOURS_BUCKETS.indexOf(club.weeklyHours));
-    const fraction = gap === 0 ? 1 : gap === 1 ? 0.5 : 0;
-    const reason = gap === 0
-      ? `Fits your ${shortHours(answers.hours)}/week schedule`
-      : gap === 1 ? `Close to your ${shortHours(answers.hours)}/week budget (about ${shortHours(club.weeklyHours)})` : null;
-    add('time', fraction, reason);
-  }
-
-  // Schedule: any overlap between the student's free evenings and the club's meeting days.
-  const freeDays = answers.freeDays || [];
-  if (freeDays.length) {
-    const overlap = club.meetingDays.filter(day => freeDays.includes(day));
-    add('schedule', overlap.length ? 1 : 0,
-      overlap.length ? `Meets on ${joinList(overlap)}, when you're free` : null);
-  }
-
-  // Major relevance: only when the student answered Yes or No and named a college.
-  const college = answers.college;
-  if ((answers.majorRelated === 'Yes' || answers.majorRelated === 'No') && college && college !== 'Undecided') {
-    const related = club.relatedColleges.includes(college);
-    const openToAll = club.relatedColleges.includes('Any');
-    if (answers.majorRelated === 'Yes') {
-      add('major', related ? 1 : openToAll ? MAJOR_OPEN_TO_ALL_SHARE : 0,
-        related ? `Connected to your college (${college})` : null);
-    } else {
-      add('major', related ? 0 : 1, related ? null : 'A break from your major, like you wanted');
-    }
-  }
-
-  // Vibe: 10 points minus 2.5 per step of difference on the 1-5 scale (floor 0).
-  if (typeof answers.vibe === 'number') {
-    const diff = Math.abs(answers.vibe - club.vibe);
-    const vibeWord = club.vibe <= 2 ? 'relaxed' : club.vibe === 3 ? 'balanced' : 'competitive';
-    add('vibe', Math.max(0, 1 - 0.25 * diff), diff <= 1 ? `Has the ${vibeWord} vibe you're after` : null);
-  }
-
-  // Size preference: "Small (under 30)" -> "Small". "No preference" doesn't apply.
-  if (answers.size && answers.size !== 'No preference') {
-    const wanted = answers.size.split(' ')[0];
-    add('size', wanted === club.size ? 1 : 0,
-      wanted === club.size ? `A ${club.size.toLowerCase()} group, like you prefer` : null);
-  }
-
-  // Combine. Only applicable criteria count toward the maximum (redistribution).
-  const applicable = criteria.filter(c => c.fraction !== null);
-  const maxPoints = applicable.reduce((sum, c) => sum + c.weight, 0);
-  const earned = applicable.reduce((sum, c) => sum + c.weight * c.fraction, 0);
-  criteria.forEach(c => { c.points = maxPoints ? (c.weight * c.fraction / maxPoints) * 100 : 0; });
-
-  const noExperience = typeof answers.experience === 'string' && answers.experience.startsWith('None');
-  const penalty = noExperience && !club.beginnerFriendly ? BEGINNER_PENALTY : 0;
-  const rawScore = Math.min(100, Math.max(0, (maxPoints ? (earned / maxPoints) * 100 : 0) - penalty));
-
-  // "Why you matched": the criteria that earned the most points first.
-  // (A reason is only written when the club actually fits that criterion.)
-  const reasons = criteria
-    .filter(c => c.reason && c.fraction > 0)
-    .sort((a, b) => b.points - a.points)
-    .slice(0, 3)
-    .map(c => c.reason);
-  // Make sure every card has at least two bullets.
-  const fallbacks = [];
-  if (club.beginnerFriendly) fallbacks.push(noExperience ? 'Beginner friendly, so no experience needed' : 'Welcomes new members of any skill level');
-  if (club.relatedColleges.includes('Any')) fallbacks.push('Open to students in every major');
-  fallbacks.push(`Meets ${shortDays(club.meetingDays)}${club.meetingTime ? ` at ${club.meetingTime}` : ''}`);
-  while (reasons.length < 2 && fallbacks.length) reasons.push(fallbacks.shift());
-
-  return { score: Math.round(rawScore), rawScore, penalty, criteria, reasons };
-}
-
-// Score every club and sort: highest score first, ties broken alphabetically by name.
-function rankClubs(clubs, answers) {
-  return clubs
-    .map(club => ({ club, ...scoreClub(club, answers) }))
-    .sort((a, b) => b.score - a.score || a.club.name.localeCompare(b.club.name));
-}
-
-/* ==========================================================================
-   6. RESULTS
-   ========================================================================== */
 
 function matchesFilters(club, filters) {
   return (!filters.category || club.category === filters.category)
@@ -508,11 +402,13 @@ function fillSelect(select, anyLabel, values) {
 }
 
 function setupFilterOptions() {
-  const categories = [...new Set(state.clubs.map(c => c.category))].sort((a, b) => a.localeCompare(b));
+  const categories = catalogMeta.categories || [];
   for (const prefix of ['f', 'b']) {
     fillSelect($(`#${prefix}-category`), 'All categories', categories);
-    fillSelect($(`#${prefix}-day`), 'Any day', DAYS);
-    fillSelect($(`#${prefix}-hours`), 'Any amount', HOURS_BUCKETS);
+    fillSelect($(`#${prefix}-day`), 'Any day', DAYS.filter(d => (catalogMeta.days || []).includes(d)));
+    $(`#${prefix}-day`).disabled = !catalogMeta.days?.length;
+    fillSelect($(`#${prefix}-hours`), 'Any amount', catalogMeta.hours || []);
+    $(`#${prefix}-hours`).disabled = !catalogMeta.hours?.length;
   }
 }
 
@@ -529,7 +425,7 @@ function renderResults() {
   const also = filtered.slice(TOP_COUNT, TOP_COUNT + ALSO_COUNT);
 
   $('#top-results').replaceChildren(...top.map((r, i) => el('li', {}, clubCard(r.club, r, { rank: i + 1 }))));
-  $('#also-results').replaceChildren(...also.map(r => el('li', {}, compactCard(r.club, r))));
+  $('#also-results').replaceChildren(...also.map(r => el('li', {}, clubCard(r.club, r))));
   $('#also-section').hidden = also.length === 0;
   $('#results-empty').hidden = filtered.length > 0;
   $('#clear-filters').hidden = !filtersOn;
@@ -562,87 +458,67 @@ function formatEventDate(date) {
 
 // Full card. `result` is null on the Browse screen when the quiz hasn't been taken.
 function clubCard(club, result, { rank = null, showWhy = true, headingLevel = 3 } = {}) {
-  const contact = state.answers.contact || [];
-  const wantsInPerson = contact.some(c => c.startsWith('In-person'));
-  const event = upcomingEvent(club);
-
   const card = el('article', { class: 'club-card' });
   card.append(el('div', { class: 'card-top' },
     el('div', { class: 'card-title' },
-      rank ? el('span', { class: 'rank', text: `Match #${rank}` }) : null,
-      el(`h${headingLevel}`, { class: 'club-name', text: club.name }),
+      rank ? el('span', { class: 'rank', text: 'Match #' + rank }) : null,
+      el('h' + headingLevel, { class: 'club-name', text: club.name }),
       el('span', { class: 'tag', text: club.category })),
-    result ? el('p', { class: 'match' }, el('strong', { text: `${result.score}%` }), el('span', { text: 'match' })) : null));
-
+    result ? el('p', { class: 'match', 'aria-label': result.score + '% estimated compatibility' }, el('strong', { text: result.score + '%' }), el('span', { text: result.assessment ? 'estimated AI fit' : 'estimated non-AI fit' })) : null));
   card.append(el('p', { class: 'description', text: club.description }));
-
-  if (result && showWhy && result.reasons.length) {
+  if (result && showWhy) {
     card.append(el('div', { class: 'why' },
-      el(`h${headingLevel + 1}`, { text: 'Why you matched' }),
-      el('ul', {}, result.reasons.map(reason => el('li', { text: reason })))));
+      el('h' + (headingLevel + 1), { text: 'Why this club fits you' }),
+      el('p', { text: result.explanation }),
+      el('div', { class:'answer-chips', 'aria-label':'Answers that influenced this match' }, (result.influencedBy || []).map(answer => el('span',{class:'tag',text:answer})))));
   }
-
-  card.append(el('dl', { class: 'facts' },
-    fact('Time', `${shortHours(club.weeklyHours)}/wk`),
-    fact('Meets', meetsText(club)),
-    fact('Size', SIZE_LABELS[club.size] || club.size)));
-
-  card.append(event
-    ? el('div', { class: `event${wantsInPerson ? ' highlight' : ''}` },
-        el('p', { class: 'event-label', text: wantsInPerson ? 'Meet them in person' : 'Next recruiting event' }),
-        el('p', { class: 'event-title', text: event.title }),
-        el('p', { text: `${formatEventDate(event.dateObj)} · ${event.time}` }),
-        el('p', { text: event.location }))
-    : el('p', { class: 'event none', text: 'No upcoming event listed yet. Check their Discover page.' }));
-
-  if (club.groupMeAvailable) {
-    const wantsGroupMe = contact.includes('GroupMe');
-    card.append(el('p', { class: `pill-note${wantsGroupMe ? ' highlight' : ''}`, text: 'GroupMe chat available: ask for the link at their next event' }));
-  }
-
-  const actions = el('div', { class: 'card-actions' });
-  if (club.discoverUrl) actions.append(linkButton('Discover page', club.discoverUrl, contact.includes('Email'), club.name, 'your pick'));
-  if (club.instagramUrl) actions.append(linkButton('Instagram', club.instagramUrl, contact.includes('Instagram'), club.name, 'your pick'));
-  card.append(actions);
+  const activityLabels={recent_activity_evidence:'Recent activity evidence',dated_past_activity:'Past activity documented',historical_only:'Historical listing — current activity unconfirmed',undated_listing:'Current activity not confirmed'};
+  card.append(el('p',{class:'meta',text:(activityLabels[club.activityStatus]||'Current activity not confirmed')+(club.activityEvidence?.asOf?' · '+club.activityEvidence.asOf:'')}));
+  if(club.recommendationEligible===false)card.append(el('p',{class:'meta',text:'Not used for recommendations: pending source review.'}));
+  const labels={weeklyHours:'Weekly commitment',costs:'Membership costs',experience:'Experience',joining:'Joining',thon:'THON',meetings:'Meetings',size:'Group size',atmosphere:'Atmosphere'};
+  const details=club.verifiedDetails||{};
+  const known=Object.entries(labels).filter(([key])=>details[key]);
+  if(known.length)card.append(el('dl',{class:'club-facts'},known.map(([key,label])=>fact(label,details[key].text))));
+  for(const warning of result?.warnings||[])card.append(el('p',{class:'match-warning',text:warning}));
+  const missing=Object.entries(labels).filter(([key])=>!details[key]).map(([,label])=>label);
+  card.append(el('details',{class:'match-details'},el('summary',{text:'Club details'}),
+    el('p',{text:'Not confirmed: '+(missing.join(', ')||'None of these fields')+'. Category and interest tags are editorial.'}),
+    ...known.map(([key,label])=>el('p',{},label+': ',el('a',{href:details[key].source,target:'_blank',rel:'noopener',text:'Source reviewed '+details[key].verifiedAt})))));
+  card.append(el('p', { class: 'club-interests', text: 'Relevant interests: ' + club.interestTags.join(' · ') }));
+  card.append(el('p', { class: 'meta', text: club.campus + ' · Source reviewed ' + club.verifiedAt }));
+  if(club.activityEvidence)card.querySelector('details').append(el('p',{},el('a',{href:club.activityEvidence.source,target:'_blank',rel:'noopener',text:'Activity evidence: '+club.activityEvidence.asOf})));
+  for(const note of club.auditNotes||[])card.querySelector('details').append(el('p',{text:note}));
+  if(result?.assessment) card.querySelector('details').append(el('p',{text:'AI evidence ratings (0–4): '+Object.entries(result.assessment).map(([key,value])=>key+': '+(value===null?'unknown':value)).join(' · ')}));
+  card.append(el('div', { class: 'card-actions' },
+    linkButton(club.officialUrl.includes('discover.psu.edu/organization/')?'Official Discover profile':club.officialUrl===club.source?'Penn State source':'Official club page', club.officialUrl, true, club.name),
+    details.website && details.website.value!==club.officialUrl ? linkButton('Verified website / social',details.website.value,false,club.name):null,
+    details.discover && details.discover.value!==club.officialUrl ? linkButton('Discover profile',details.discover.value,false,club.name):null,
+    club.source !== club.officialUrl ? linkButton('Verification source', club.source, false, club.name) : null));
   return card;
 }
 
-// Smaller card for "Also worth a look".
-function compactCard(club, result) {
-  return el('article', { class: 'club-card compact' },
-    el('div', { class: 'card-top' },
-      el('div', { class: 'card-title' },
-        el('h4', { class: 'club-name', text: club.name }),
-        el('span', { class: 'tag', text: club.category })),
-      el('p', { class: 'match' }, el('strong', { text: `${result.score}%` }), el('span', { text: 'match' }))),
-    el('p', { class: 'compact-reason', text: result.reasons[0] }),
-    el('p', { class: 'compact-meta', text: `${shortHours(club.weeklyHours)}/wk · ${meetsText(club)} · ${club.size}` }),
-    club.discoverUrl ? el('div', { class: 'card-actions' }, linkButton('Discover page', club.discoverUrl, false, club.name)) : null);
+async function renderBrowse() {
+  browseController?.abort();
+  const controller = new AbortController(); browseController = controller;
+  $('#browse-count').textContent = 'Searching verified organizations…';
+  $('#browse-error').hidden = true;
+  const params=new URLSearchParams({q:$('#b-search').value.trim(),category:$('#b-category').value,day:$('#b-day').value,hours:$('#b-hours').value,offset:String(browseOffset),limit:'24'});
+  try{
+    const response=await fetch('/api/clubs?'+params,{signal:controller.signal});
+    if(!response.ok)throw new Error('Catalog search is unavailable. Please try again.');
+    const data=await response.json();if(controller!==browseController)return;
+    const resultsById=new Map(state.results.map(r=>[r.clubId,r]));
+    $('#browse-list').replaceChildren(...data.clubs.map(club=>el('li',{},clubCard(club,resultsById.get(club.id)||null,{showWhy:false}))));
+    $('#browse-count').textContent=data.total ? 'Showing '+(data.offset+1)+'–'+(data.offset+data.clubs.length)+' of '+data.total+' matches ('+data.catalogTotal+' organizations in catalog)' : 'No clubs match your search. Try another keyword or clear filters.';
+    browseNextOffset=data.nextOffset;
+    $('#browse-prev').disabled=data.offset===0;$('#browse-next').disabled=data.nextOffset===null;
+  }catch(error){if(error.name==='AbortError')return;$('#browse-count').textContent='';$('#browse-error').textContent=error.message;$('#browse-error').hidden=false;}
 }
-
-/* ==========================================================================
-   7. BROWSE ALL
-   ========================================================================== */
-
-function searchableText(club) {
-  return [club.name, club.category, club.description, ...club.interestTags, ...club.motivationTags]
-    .join(' ').toLowerCase();
-}
-
-function renderBrowse() {
-  const query = $('#b-search').value.trim().toLowerCase();
-  const filters = { category: $('#b-category').value, day: $('#b-day').value, hours: $('#b-hours').value };
-  const resultsById = new Map(state.results.map(r => [r.club.id, r]));
-  const clubs = state.clubs
-    .filter(club => matchesFilters(club, filters) && (!query || searchableText(club).includes(query)))
-    .sort((a, b) => a.name.localeCompare(b.name));
-
-  $('#browse-list').replaceChildren(...clubs.map(club =>
-    el('li', {}, clubCard(club, resultsById.get(club.id) || null, { showWhy: false }))));
-  $('#browse-count').textContent = `Showing ${clubs.length} of ${state.clubs.length} clubs`;
-}
+function resetBrowse(){browseOffset=0;clearTimeout(browseTimer);browseTimer=setTimeout(renderBrowse,180);}
 
 function openBrowse() {
+  requestVersion++;
+  requestController?.abort();
   renderBrowse();
   showScreen('browse');
 }
@@ -717,10 +593,12 @@ async function copySummary() {
    ========================================================================== */
 
 function bindEvents() {
+  $('#retry-recommendations').addEventListener('click', finishQuiz);
+  $('#loading-browse').addEventListener('click', openBrowse);
   $('#start-btn').addEventListener('click', startQuiz);
   $('#browse-start').addEventListener('click', startQuiz);
   $('#retake-btn').addEventListener('click', startQuiz);
-  $('#home-btn').addEventListener('click', () => showScreen('landing'));
+  $('#home-btn').addEventListener('click', () => { requestVersion++; requestController?.abort(); showScreen('landing'); });
   $('#nav-browse').addEventListener('click', openBrowse);
   $('#landing-browse').addEventListener('click', openBrowse);
   $('#results-browse').addEventListener('click', openBrowse);
@@ -743,14 +621,16 @@ function bindEvents() {
     $('#f-category').focus();
   });
 
-  $('#b-search').addEventListener('input', renderBrowse);
-  document.querySelectorAll('[data-browse-filter]').forEach(select => select.addEventListener('change', renderBrowse));
+  $('#b-search').addEventListener('input', resetBrowse);
+  $('#browse-prev').addEventListener('click',()=>{browseOffset=Math.max(0,browseOffset-24);renderBrowse();$('#browse-title').focus();});
+  $('#browse-next').addEventListener('click',()=>{if(browseNextOffset!==null){browseOffset=browseNextOffset;renderBrowse();$('#browse-title').focus();}});
+  document.querySelectorAll('[data-browse-filter]').forEach(select => select.addEventListener('change', resetBrowse));
 
   $('#copy-summary').addEventListener('click', copySummary);
 }
 
 async function init() {
-  $('#feedback-link').href = FEEDBACK_FORM_URL;
+
   if (TEST_MODE) {
     $('#test-banner').hidden = false;
     $('#test-tools').hidden = false;
@@ -767,7 +647,7 @@ async function init() {
   }
 }
 
-// Exposed for debugging in the console (e.g. ClubSortingHat.scoreClub(club, answers)).
-window.ClubSortingHat = { state, scoreClub, rankClubs, SCORING_WEIGHTS };
+// In-memory quiz state exposed for local interview testing.
+window.ClubSortingHat = { state };
 
 init();

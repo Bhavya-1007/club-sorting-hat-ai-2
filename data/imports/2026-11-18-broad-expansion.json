@@ -1,0 +1,844 @@
+{
+  "clubs": [
+    {
+      "id": "adpr",
+      "name": "Ad/PR Club",
+      "description": "Advertising and public relations student club.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "after-whistle",
+      "name": "After the Whistle",
+      "description": "Students produce high-school football coverage.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "aaf",
+      "name": "American Advertising Federation (AAF)",
+      "description": "Student chapter of the advertising federation.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "awsm",
+      "name": "Association for Women in Sports Media",
+      "description": "Supports students pursuing sports media careers.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "bams",
+      "name": "Bellisario Alliance of Multicultural Students",
+      "description": "Builds an inclusive communications-college community.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "bellisario-council",
+      "name": "Bellisario College Student Council",
+      "description": "Represents students in the communications college.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "commagency",
+      "name": "CommAgency",
+      "description": "Students create communications work for clients.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ],
+      "verifiedDetails": {
+        "joining": {
+          "value": "selection",
+          "text": "The college describes a selected student team; exact selection steps are not confirmed.",
+          "source": "https://bellisario.psu.edu/current/student-organizations",
+          "verifiedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "id": "commradio",
+      "name": "CommRadio",
+      "description": "Student-run internet radio station.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "culture-central",
+      "name": "Culture Central",
+      "description": "Media discussions highlighting diverse cultural perspectives.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "collegian",
+      "name": "Daily Collegian",
+      "description": "Student newspaper covering the campus community.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "la-vie",
+      "name": "La Vie",
+      "description": "Produces the Penn State yearbook.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "lion-caucus",
+      "name": "Lion Caucus",
+      "description": "Students connect with governmental relations work.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "onward-state",
+      "name": "Onward State",
+      "description": "Student online news organization.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "music-group",
+      "name": "Penn State Music Group",
+      "description": "Mock record label teaching music-industry practices.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Arts & music",
+        "Business & entrepreneurship"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "phroth",
+      "name": "Phroth Humor Publication",
+      "description": "Publishes satirical magazines and newspapers.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "psn-news",
+      "name": "PSN News",
+      "description": "Students produce weekly live campus news.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "psn-tv",
+      "name": "PSN-TV",
+      "description": "Student-run network producing varied television programming.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "thrift",
+      "name": "PSU Thrift Club",
+      "description": "Promotes thrifting over fast fashion.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "prssa",
+      "name": "Public Relations Student Society of America",
+      "description": "Connects students with public-relations professionals.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "spj",
+      "name": "Society of Professional Journalists",
+      "description": "Student chapter supporting journalism.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "sovereign",
+      "name": "Sovereign Magazine",
+      "description": "Magazine centering students of color.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "spoon",
+      "name": "Spoon University",
+      "description": "Student food and lifestyle journalism.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "student-film",
+      "name": "Student Film Organization (SFO)",
+      "description": "Supports filmmaking by Penn State students.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "state-of-state",
+      "name": "State of State",
+      "description": "Promotes dialogue about Penn State issues.",
+      "source": "https://bellisario.psu.edu/current/student-organizations",
+      "officialUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Media & writing"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Media & writing",
+      "relatedColleges": [
+        "Communications (Bellisario)"
+      ]
+    },
+    {
+      "id": "awc",
+      "name": "Association of Women in Computing",
+      "description": "Supports women in computing through community and professional networking.",
+      "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "officialUrl": "https://awc.cse.psu.edu/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "category": "Engineering & tech",
+      "relatedColleges": [
+        "Engineering",
+        "Information Sciences & Technology"
+      ],
+      "verifiedDetails": {
+        "website": {
+          "value": "https://awc.cse.psu.edu/",
+          "text": "Organization-specific link listed by Penn State.",
+          "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+          "verifiedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "id": "acm",
+      "name": "Association for Computing Machinery (ACM)",
+      "description": "Programming, hardware and software activities include workshops, technical talks and career support.",
+      "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "officialUrl": "https://acm.psu.edu/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "category": "Engineering & tech",
+      "relatedColleges": [
+        "Engineering",
+        "Information Sciences & Technology"
+      ],
+      "verifiedDetails": {
+        "website": {
+          "value": "https://acm.psu.edu/",
+          "text": "Organization-specific link listed by Penn State.",
+          "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+          "verifiedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "id": "hkn",
+      "name": "Eta Kappa Nu (HKN)",
+      "description": "Electrical engineering honor society recognizing academic and professional achievement.",
+      "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "officialUrl": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "category": "Engineering & tech",
+      "relatedColleges": [
+        "Engineering",
+        "Information Sciences & Technology"
+      ]
+    },
+    {
+      "id": "hackpsu",
+      "name": "HackPSU Organizing Team",
+      "description": "Plans and organizes the educational HackPSU hackathon.",
+      "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "officialUrl": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "category": "Engineering & tech",
+      "relatedColleges": [
+        "Engineering",
+        "Information Sciences & Technology"
+      ],
+      "verifiedDetails": {
+        "joining": {
+          "value": "interview",
+          "text": "The organizing team is selected through interviews; this is separate from attending the hackathon.",
+          "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+          "verifiedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "id": "data-labs",
+      "name": "Nittany Data Labs",
+      "description": "Data science education includes consulting projects, workshops, competitions and technical talks.",
+      "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "officialUrl": "https://discover.psu.edu/organization/nittany-data-labs",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "category": "Engineering & tech",
+      "relatedColleges": [
+        "Engineering",
+        "Information Sciences & Technology"
+      ],
+      "verifiedDetails": {
+        "discover": {
+          "value": "https://discover.psu.edu/organization/nittany-data-labs",
+          "text": "Organization-specific link listed by Penn State.",
+          "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+          "verifiedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "id": "ieee",
+      "name": "Penn State IEEE",
+      "description": "Professional engineering community supporting technological innovation and students.",
+      "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "officialUrl": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "category": "Engineering & tech",
+      "relatedColleges": [
+        "Engineering",
+        "Information Sciences & Technology"
+      ]
+    },
+    {
+      "id": "spie-osa",
+      "name": "Penn State SPIE:OSA",
+      "description": "Optical science group offering education, networking and outreach.",
+      "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "officialUrl": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "category": "Engineering & tech",
+      "relatedColleges": [
+        "Engineering",
+        "Information Sciences & Technology"
+      ]
+    },
+    {
+      "id": "uas",
+      "name": "Unmanned Aerial Systems",
+      "description": "Designs unmanned aircraft, exploring computer vision, controls and aircraft engineering.",
+      "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "officialUrl": "https://sites.psu.edu/uaspennstate/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "category": "Engineering & tech",
+      "relatedColleges": [
+        "Engineering",
+        "Information Sciences & Technology"
+      ],
+      "verifiedDetails": {
+        "website": {
+          "value": "https://sites.psu.edu/uaspennstate/",
+          "text": "Organization-specific link listed by Penn State.",
+          "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+          "verifiedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "id": "electrochemical",
+      "name": "Student Chapter of the Electrochemical Society at Penn State University",
+      "description": "Connects students through electrochemistry research, professional development and outreach.",
+      "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "officialUrl": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "category": "Engineering & tech",
+      "relatedColleges": [
+        "Engineering",
+        "Information Sciences & Technology"
+      ]
+    },
+    {
+      "id": "robotics",
+      "name": "Penn State Robotics Club",
+      "description": "Extracurricular community for learning about robotics.",
+      "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "officialUrl": "https://sites.psu.edu/roboticsclub/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "category": "Engineering & tech",
+      "relatedColleges": [
+        "Engineering",
+        "Information Sciences & Technology"
+      ],
+      "verifiedDetails": {
+        "website": {
+          "value": "https://sites.psu.edu/roboticsclub/",
+          "text": "Organization-specific link listed by Penn State.",
+          "source": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+          "verifiedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "id": "enactus",
+      "name": "Enactus - University Park",
+      "description": "Applies entrepreneurship to community projects while developing leadership and teamwork.",
+      "source": "https://cpsse.psu.edu/club/enactus-university-park-0",
+      "officialUrl": "https://cpsse.psu.edu/club/enactus-university-park-0",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Business & entrepreneurship",
+        "Service & THON"
+      ],
+      "motivationTags": [
+        "Give back / community service",
+        "Build my resume / career"
+      ],
+      "category": "Business & entrepreneurship",
+      "relatedColleges": [
+        "Business (Smeal)"
+      ]
+    },
+    {
+      "id": "happy-valley-vc",
+      "name": "Happy Valley VC",
+      "description": "Connects students with startups and venture investing through projects, expert discussions and competitions.",
+      "source": "https://cpsse.psu.edu/club/happy-valley-vc",
+      "officialUrl": "https://cpsse.psu.edu/club/happy-valley-vc",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Business & entrepreneurship"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Business & entrepreneurship",
+      "relatedColleges": [
+        "Business (Smeal)"
+      ]
+    },
+    {
+      "id": "entrepreneur",
+      "name": "Nittany Entrepreneur Society",
+      "description": "Helps students develop entrepreneurial skills, collaborate and find resources for ventures.",
+      "source": "https://cpsse.psu.edu/club/nittany-entrepreneur-society",
+      "officialUrl": "https://cpsse.psu.edu/club/nittany-entrepreneur-society",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Business & entrepreneurship"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "category": "Business & entrepreneurship",
+      "relatedColleges": [
+        "Business (Smeal)"
+      ]
+    },
+    {
+      "id": "nittany-ai",
+      "name": "Nittany AI Student Society",
+      "description": "Brings technical and nontechnical students together around artificial intelligence and machine learning.",
+      "source": "https://nittanyai.psu.edu/get-involved/students",
+      "officialUrl": "https://nittanyai.psu.edu/get-involved/students",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "category": "Engineering & tech",
+      "relatedColleges": [
+        "Engineering",
+        "Information Sciences & Technology"
+      ]
+    }
+  ]
+}

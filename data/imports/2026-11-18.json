@@ -1,0 +1,907 @@
+{
+  "clubs": [
+    {
+      "id": "aiaa",
+      "name": "American Institute of Aeronautics and Astronautics (AIAA)",
+      "description": "Offers aerospace students hands-on engineering opportunities, social engagement and connections beyond coursework.",
+      "source": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "officialUrl": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Engineering & tech",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill",
+        "Make friends / social"
+      ],
+      "relatedColleges": [
+        "Engineering"
+      ]
+    },
+    {
+      "id": "vfs",
+      "name": "Vertical Flight Society",
+      "description": "Connects students with the technical field of helicopters and other vertical-flight aircraft.",
+      "source": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "officialUrl": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Engineering & tech",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "relatedColleges": [
+        "Engineering"
+      ]
+    },
+    {
+      "id": "aerowomen",
+      "name": "Penn State AeroWomen",
+      "description": "Supports women in aerospace through professional connections, academic development and peer support.",
+      "source": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "officialUrl": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Engineering & tech",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill",
+        "Make friends / social"
+      ],
+      "relatedColleges": [
+        "Engineering"
+      ]
+    },
+    {
+      "id": "soaring",
+      "name": "Penn State Soaring Club",
+      "description": "Provides flight instruction and opportunities for cross-country and competition flying.",
+      "source": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "officialUrl": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Engineering & tech",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Explore a hobby",
+        "Learn a new skill",
+        "Compete (sports or competitions)"
+      ],
+      "relatedColleges": [
+        "Engineering"
+      ]
+    },
+    {
+      "id": "wind-energy",
+      "name": "Penn State Wind Energy Club",
+      "description": "Combines wind-industry learning with turbine design and a collegiate competition.",
+      "source": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "officialUrl": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Engineering & tech",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill",
+        "Compete (sports or competitions)"
+      ],
+      "relatedColleges": [
+        "Engineering"
+      ]
+    },
+    {
+      "id": "sspl",
+      "name": "Student Space Programs Laboratory",
+      "description": "Students design, build and integrate space systems through interdisciplinary projects and complete engineering design cycles.",
+      "source": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "officialUrl": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Engineering & tech",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "relatedColleges": [
+        "Engineering"
+      ]
+    },
+    {
+      "id": "rocket-labs",
+      "name": "Nittany Rocket Labs",
+      "description": "Designs and flies competition rockets, with interdisciplinary roles spanning engineering, data analysis and business.",
+      "source": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "officialUrl": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Engineering & tech",
+      "interestTags": [
+        "Engineering & tech",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Compete (sports or competitions)",
+        "Build my resume / career"
+      ],
+      "relatedColleges": [
+        "Engineering"
+      ]
+    },
+    {
+      "id": "aid",
+      "name": "AID at University Park",
+      "description": "Raises funds supporting grassroots projects in India.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international",
+        "Service & THON"
+      ],
+      "motivationTags": [
+        "Give back / community service",
+        "Connect with my culture or identity"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "bangladesh",
+      "name": "Bangladesh Culture Club",
+      "description": "Organizes social events celebrating Bangladeshi traditions.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international"
+      ],
+      "motivationTags": [
+        "Connect with my culture or identity",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "fanaa",
+      "name": "Fanaa",
+      "description": "Performs South Asian a cappella music.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international",
+        "Arts & music"
+      ],
+      "motivationTags": [
+        "Explore a hobby",
+        "Learn a new skill",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "iclc",
+      "name": "Indian Culture and Language Club",
+      "description": "Celebrates Indian heritage through cultural and outdoor events.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international",
+        "Outdoors & fitness"
+      ],
+      "motivationTags": [
+        "Connect with my culture or identity",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "jadhoom",
+      "name": "JaDhoom",
+      "description": "Competes nationally in Bollywood fusion dance.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international",
+        "Arts & music"
+      ],
+      "motivationTags": [
+        "Compete (sports or competitions)",
+        "Explore a hobby",
+        "Connect with my culture or identity"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "nepalese",
+      "name": "Nepalese Student Society at Penn State",
+      "description": "Promotes and preserves Nepalese culture.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international"
+      ],
+      "motivationTags": [
+        "Connect with my culture or identity",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "nritya",
+      "name": "Nritya",
+      "description": "Offers Bharatanatyam performances and dance workshops.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international",
+        "Arts & music"
+      ],
+      "motivationTags": [
+        "Explore a hobby",
+        "Learn a new skill",
+        "Connect with my culture or identity"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "pakistani",
+      "name": "Pakistani Student Association",
+      "description": "Connects students socially while sharing Pakistani culture.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international"
+      ],
+      "motivationTags": [
+        "Connect with my culture or identity",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "raaga",
+      "name": "Raaga",
+      "description": "Organizes South Indian classical music and dance.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international",
+        "Arts & music"
+      ],
+      "motivationTags": [
+        "Explore a hobby",
+        "Connect with my culture or identity"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "sasa",
+      "name": "South Asian Student Association",
+      "description": "Hosts South Asian cultural events.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international"
+      ],
+      "motivationTags": [
+        "Connect with my culture or identity",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "sher-bhangra",
+      "name": "Sher Bhangra",
+      "description": "A competitive dance team.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international",
+        "Arts & music"
+      ],
+      "motivationTags": [
+        "Compete (sports or competitions)",
+        "Explore a hobby"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "sikh",
+      "name": "Sikh Student Association",
+      "description": "Welcomes students interested in Sikh principles.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international",
+        "Faith & spirituality"
+      ],
+      "motivationTags": [
+        "Connect with my culture or identity",
+        "Learn a new skill"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "sima",
+      "name": "SIMA",
+      "description": "Hosts Hindustani and Carnatic classical music and art events.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international",
+        "Arts & music"
+      ],
+      "motivationTags": [
+        "Explore a hobby",
+        "Connect with my culture or identity"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "tamil",
+      "name": "Tamil Student Association",
+      "description": "Celebrates Tamil language and culture.",
+      "source": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "officialUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international"
+      ],
+      "motivationTags": [
+        "Connect with my culture or identity",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "club-cricket",
+      "name": "Club Cricket",
+      "description": "A University Park competitive club sports team documented by Campus Recreation in its 2024–25 championship report.",
+      "source": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "officialUrl": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Outdoors & fitness",
+      "interestTags": [
+        "Outdoors & fitness"
+      ],
+      "motivationTags": [
+        "Compete (sports or competitions)",
+        "Learn a new skill",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "club-cycling",
+      "name": "Club Cycling",
+      "description": "A University Park competitive club sports team documented by Campus Recreation in its 2024–25 championship report.",
+      "source": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "officialUrl": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Outdoors & fitness",
+      "interestTags": [
+        "Outdoors & fitness"
+      ],
+      "motivationTags": [
+        "Compete (sports or competitions)",
+        "Learn a new skill",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "club-gymnastics",
+      "name": "Club Gymnastics",
+      "description": "A University Park competitive club sports team documented by Campus Recreation in its 2024–25 championship report.",
+      "source": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "officialUrl": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Outdoors & fitness",
+      "interestTags": [
+        "Outdoors & fitness"
+      ],
+      "motivationTags": [
+        "Compete (sports or competitions)",
+        "Learn a new skill",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "club-track",
+      "name": "Club Track and Field",
+      "description": "A University Park competitive club sports team documented by Campus Recreation in its 2024–25 championship report.",
+      "source": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "officialUrl": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Outdoors & fitness",
+      "interestTags": [
+        "Outdoors & fitness"
+      ],
+      "motivationTags": [
+        "Compete (sports or competitions)",
+        "Learn a new skill",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "club-baseball",
+      "name": "Men’s Club Baseball",
+      "description": "A University Park competitive club sports team documented by Campus Recreation in its 2024–25 championship report.",
+      "source": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "officialUrl": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Outdoors & fitness",
+      "interestTags": [
+        "Outdoors & fitness"
+      ],
+      "motivationTags": [
+        "Compete (sports or competitions)",
+        "Learn a new skill",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "club-basketball",
+      "name": "Men’s Club Basketball",
+      "description": "A University Park competitive club sports team documented by Campus Recreation in its 2024–25 championship report.",
+      "source": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "officialUrl": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Outdoors & fitness",
+      "interestTags": [
+        "Outdoors & fitness"
+      ],
+      "motivationTags": [
+        "Compete (sports or competitions)",
+        "Learn a new skill",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "legal-brigades",
+      "name": "Global Brigades Legal Empowerment Chapter",
+      "description": "Supports legal education and access in underserved communities alongside local lawyers.",
+      "source": "https://la.psu.edu/beyond-the-classroom/student-organizations/",
+      "officialUrl": "https://discover.psu.edu/organization/gble",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Service & THON",
+      "interestTags": [
+        "Service & THON",
+        "Politics & advocacy"
+      ],
+      "motivationTags": [
+        "Give back / community service",
+        "Build my resume / career"
+      ],
+      "relatedColleges": [
+        "Liberal Arts"
+      ]
+    },
+    {
+      "id": "iada",
+      "name": "International Affairs and Debate Association",
+      "description": "Explores diplomacy and international relations through Model United Nations conferences.",
+      "source": "https://la.psu.edu/beyond-the-classroom/student-organizations/",
+      "officialUrl": "https://discover.psu.edu/organization/international-affairs-and-debate-association",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Politics & advocacy",
+      "interestTags": [
+        "Politics & advocacy",
+        "Cultural & international"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Compete (sports or competitions)"
+      ],
+      "relatedColleges": [
+        "Liberal Arts"
+      ]
+    },
+    {
+      "id": "italian",
+      "name": "Italian Student Society",
+      "description": "Shares Italian traditions through social and cultural programs.",
+      "source": "https://la.psu.edu/beyond-the-classroom/student-organizations/",
+      "officialUrl": "https://discover.psu.edu/organization/italian-student-society",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international"
+      ],
+      "motivationTags": [
+        "Connect with my culture or identity",
+        "Make friends / social"
+      ],
+      "relatedColleges": [
+        "Liberal Arts"
+      ]
+    },
+    {
+      "id": "justice",
+      "name": "Justice Association",
+      "description": "Educates undergraduates about the American justice system.",
+      "source": "https://la.psu.edu/beyond-the-classroom/student-organizations/",
+      "officialUrl": "https://discover.psu.edu/organization/ja",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Politics & advocacy",
+      "interestTags": [
+        "Politics & advocacy"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "relatedColleges": [
+        "Liberal Arts"
+      ]
+    },
+    {
+      "id": "kalliope",
+      "name": "Kalliope",
+      "description": "Builds a creative community and publishes student writing and art.",
+      "source": "https://la.psu.edu/beyond-the-classroom/student-organizations/",
+      "officialUrl": "https://discover.psu.edu/organization/kalliope",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Media & writing",
+      "interestTags": [
+        "Media & writing",
+        "Arts & music"
+      ],
+      "motivationTags": [
+        "Explore a hobby",
+        "Learn a new skill",
+        "Make friends / social"
+      ],
+      "relatedColleges": [
+        "Liberal Arts"
+      ]
+    },
+    {
+      "id": "mock-trial",
+      "name": "Mock Trial Association",
+      "description": "Develops trial advocacy skills through workshops and competitive mock trials.",
+      "source": "https://la.psu.edu/beyond-the-classroom/student-organizations/",
+      "officialUrl": "https://la.psu.edu/beyond-the-classroom/student-organizations/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Politics & advocacy",
+      "interestTags": [
+        "Politics & advocacy"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Compete (sports or competitions)",
+        "Learn a new skill"
+      ],
+      "relatedColleges": [
+        "Liberal Arts"
+      ]
+    },
+    {
+      "id": "mula",
+      "name": "Multicultural Undergraduate Law Association",
+      "description": "Promotes diversity in law and supports students pursuing law school.",
+      "source": "https://la.psu.edu/beyond-the-classroom/student-organizations/",
+      "officialUrl": "https://discover.psu.edu/organization/mula",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Politics & advocacy",
+      "interestTags": [
+        "Politics & advocacy",
+        "Cultural & international"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Connect with my culture or identity"
+      ],
+      "relatedColleges": [
+        "Liberal Arts"
+      ]
+    },
+    {
+      "id": "mwf",
+      "name": "Multicultural Women’s Forum",
+      "description": "Develops professional and leadership skills while addressing cultural and gender issues in business.",
+      "source": "https://la.psu.edu/beyond-the-classroom/student-organizations/",
+      "officialUrl": "https://discover.psu.edu/organization/multicultural-womens-forum",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Business & entrepreneurship",
+      "interestTags": [
+        "Business & entrepreneurship",
+        "Cultural & international"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Connect with my culture or identity"
+      ],
+      "relatedColleges": [
+        "Liberal Arts"
+      ]
+    },
+    {
+      "id": "hhd-council",
+      "name": "Health and Human Development Student Council",
+      "description": "Represents HHD students and promotes communication with college leadership.",
+      "source": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "officialUrl": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Health & wellness",
+      "interestTags": [
+        "Health & wellness",
+        "Politics & advocacy"
+      ],
+      "motivationTags": [
+        "Give back / community service",
+        "Learn a new skill"
+      ],
+      "relatedColleges": [
+        "Health & Human Development"
+      ]
+    },
+    {
+      "id": "phi-epsilon-kappa",
+      "name": "Phi Epsilon Kappa",
+      "description": "A health-focused professional fraternity combining networking, service and friendships.",
+      "source": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "officialUrl": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Health & wellness",
+      "interestTags": [
+        "Health & wellness"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Make friends / social",
+        "Give back / community service"
+      ],
+      "relatedColleges": [
+        "Health & Human Development"
+      ]
+    },
+    {
+      "id": "bbh",
+      "name": "Biobehavioral Health Society",
+      "description": "Connects students and faculty through educational and career opportunities.",
+      "source": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "officialUrl": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Health & wellness",
+      "interestTags": [
+        "Health & wellness",
+        "Science & research"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Learn a new skill"
+      ],
+      "relatedColleges": [
+        "Health & Human Development"
+      ]
+    },
+    {
+      "id": "neuroscience",
+      "name": "Nittany Neuroscience Club",
+      "description": "Shares neuroscience discoveries and develops interest in neurology.",
+      "source": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "officialUrl": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Science & research",
+      "interestTags": [
+        "Science & research",
+        "Health & wellness"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "relatedColleges": [
+        "Health & Human Development"
+      ]
+    },
+    {
+      "id": "audiology",
+      "name": "Audiology Club",
+      "description": "Offers professional connections and service opportunities related to hearing health.",
+      "source": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "officialUrl": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Health & wellness",
+      "interestTags": [
+        "Health & wellness"
+      ],
+      "motivationTags": [
+        "Build my resume / career",
+        "Give back / community service"
+      ],
+      "relatedColleges": [
+        "Health & Human Development"
+      ]
+    },
+    {
+      "id": "sign-language",
+      "name": "Penn State Sign Language Organization",
+      "description": "Practices American Sign Language and shares deaf culture; all majors and experience levels are welcome.",
+      "source": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "officialUrl": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international",
+        "Health & wellness"
+      ],
+      "motivationTags": [
+        "Learn a new skill",
+        "Connect with my culture or identity",
+        "Make friends / social"
+      ],
+      "relatedColleges": [
+        "Health & Human Development"
+      ]
+    },
+    {
+      "id": "spa",
+      "name": "Student Programming Association",
+      "description": "Students organize concerts, speakers and campus activities, building event-planning and leadership experience.",
+      "source": "https://www.spa.psu.edu/join/",
+      "officialUrl": "https://www.spa.psu.edu/join/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Arts & music",
+      "interestTags": [
+        "Arts & music",
+        "Business & entrepreneurship"
+      ],
+      "motivationTags": [
+        "Make friends / social",
+        "Explore a hobby",
+        "Learn a new skill",
+        "Build my resume / career"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "urban-gaming",
+      "name": "Urban Gaming Club",
+      "description": "Brings students together through campus-wide live-action games and LAN gaming events.",
+      "source": "https://sites.psu.edu/urbangamingclub/",
+      "officialUrl": "https://sites.psu.edu/urbangamingclub/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Gaming",
+      "interestTags": [
+        "Gaming",
+        "Outdoors & fitness"
+      ],
+      "motivationTags": [
+        "Make friends / social",
+        "Explore a hobby",
+        "Compete (sports or competitions)"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "international-council",
+      "name": "International Student Council",
+      "description": "Represents international students and encourages cultural exchange through festivals and community events, including at University Park.",
+      "source": "https://iscpennstate.psu.edu/",
+      "officialUrl": "https://iscpennstate.psu.edu/",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Cultural & international",
+      "interestTags": [
+        "Cultural & international",
+        "Politics & advocacy"
+      ],
+      "motivationTags": [
+        "Connect with my culture or identity",
+        "Make friends / social",
+        "Give back / community service"
+      ],
+      "relatedColleges": []
+    },
+    {
+      "id": "pennharmonics",
+      "name": "The Pennharmonics",
+      "description": "A Penn State a cappella group documented performing concerts at University Park.",
+      "source": "https://www.psu.edu/news/arts-and-entertainment/story/pennharmonics-hold-spring-cappella-concert-senior-send-april-8",
+      "officialUrl": "https://www.psu.edu/news/arts-and-entertainment/story/pennharmonics-hold-spring-cappella-concert-senior-send-april-8",
+      "campus": "University Park",
+      "verifiedAt": "2026-11-18",
+      "category": "Arts & music",
+      "interestTags": [
+        "Arts & music"
+      ],
+      "motivationTags": [
+        "Explore a hobby",
+        "Learn a new skill",
+        "Make friends / social"
+      ],
+      "relatedColleges": []
+    }
+  ]
+}

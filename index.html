@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Club Sorting Hat</title>
-  <meta name="description" content="Answer 10 quick questions and get matched with Penn State clubs that fit you. A student prototype for EDSGN 367.">
+  <meta name="description" content="Answer 10 quick questions and get matched with Penn State clubs that fit you. Verified University Park organizations with AI-powered recommendations.">
   <meta name="theme-color" content="#1E407C">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -31,10 +31,12 @@
       <svg class="hero-hat" viewBox="0 0 120 110" aria-hidden="true" focusable="false"><use href="#hat-icon"></use></svg>
       <h1 id="landing-title" tabindex="-1" data-focus>Club Sorting Hat</h1>
       <p class="lead">Answer 10 quick questions and we'll match you with Penn State clubs that fit you.</p>
-      <p class="meta">About 3 minutes &middot; No login &middot; Nothing is saved</p>
+      <p class="meta">About 3 minutes &middot; No login &middot; University Park</p>
+      <p class="status" data-catalog-count>Loading organization count…</p>
       <button type="button" class="btn btn-primary btn-lg" id="start-btn" disabled>Start the quiz</button>
       <p id="load-error" class="error-box" role="alert" hidden></p>
       <button type="button" class="btn btn-link" id="landing-browse">Or browse every club</button>
+      <p class="privacy-note">When AI is enabled, your quiz answers are sent to our server and Groq to generate recommendations. We do not save quiz answers in an application database. Groq may retain API data under its policies. Without an API key, results use clearly labeled non-AI matching.</p>
       <p class="audience">Made for first-years, transfer, 2+2, and international students &mdash; before or after the Involvement Fair.</p>
     </section>
 
@@ -62,16 +64,24 @@
 
     <!-- Loading / sorting animation -->
     <section id="screen-loading" class="screen loading" aria-labelledby="loading-title" hidden>
+      <div id="loading-progress">
       <svg class="sorting-hat" viewBox="0 0 120 110" aria-hidden="true" focusable="false"><use href="#hat-icon"></use></svg>
       <h2 id="loading-title" tabindex="-1" data-focus>Sorting you<span class="dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span></h2>
-      <p class="meta">Weighing your interests, schedule, and vibe.</p>
+      <p class="meta">Considering your preferences and verified organization information.</p>
+      </div>
+      <div id="loading-error" hidden><p id="recommendation-error" class="error" role="alert"></p><button class="btn btn-primary" id="retry-recommendations" type="button">Try again</button></div>
+      <button class="btn btn-link" id="loading-browse" type="button">Browse clubs instead</button>
     </section>
 
     <!-- 3. Results -->
     <section id="screen-results" class="screen" aria-labelledby="results-title" hidden>
       <h2 id="results-title" tabindex="-1" data-focus>Your top club matches</h2>
-      <p class="lead-sm">Ranked by how well each club fits your answers. Use them as a starting point, then go meet the clubs.</p>
+      <p class="status" data-catalog-count></p>
+      <p class="lead-sm">Personalized suggestions from our curated University Park catalog. Explore their official pages before joining.</p>
 
+      <p id="recommendation-status" class="mode-notice" role="status"></p>
+      <p id="score-note" class="status"></p>
+      <p class="catalog-note">Source-verified listings, not confirmed current recruitment. Meeting times, weekly commitment and eligibility may be unknown; check the official page before joining.</p>
       <div class="test-tools" id="test-tools" hidden>
         <button type="button" class="btn btn-secondary btn-small" id="copy-summary">Copy session summary</button>
         <span id="copy-status" class="status" aria-live="polite"></span>
@@ -98,7 +108,7 @@
       <p id="results-count" class="status" aria-live="polite"></p>
 
       <ol id="top-results" class="card-list"></ol>
-      <p id="results-empty" class="empty" hidden>No matches with these filters. Try clearing one.</p>
+      <p id="results-empty" class="empty" hidden>No recommendations available with these preferences or filters. Try clearing filters, retaking the quiz, or browsing the catalog.</p>
 
       <section id="also-section" class="also" aria-labelledby="also-title">
         <h3 id="also-title">Also worth a look</h3>
@@ -110,14 +120,14 @@
         <button type="button" class="btn btn-secondary" id="results-browse">Browse all clubs</button>
       </div>
 
-      <div class="feedback-bar">
-        <a id="feedback-link" href="#" target="_blank" rel="noopener">Give feedback<span class="visually-hidden"> (opens in a new tab)</span></a>
-      </div>
+
     </section>
 
     <!-- 4. Browse all -->
     <section id="screen-browse" class="screen" aria-labelledby="browse-title" hidden>
       <h2 id="browse-title" tabindex="-1" data-focus>Browse all clubs</h2>
+      <p class="lead-sm">A curated University Park catalog, not the complete Discover directory. Source review verifies the published listing, not current recruitment. Interest tags are editorial classifications.</p>
+      <p class="status">Meeting times, commitment and eligibility may be unknown. Schedule and commitment filters are disabled until verified data is available.</p>
       <div class="filter-bar browse-filters" role="search">
         <div class="field field-wide">
           <label for="b-search">Search clubs</label>
@@ -137,7 +147,9 @@
         </div>
       </div>
       <p id="browse-count" class="status" aria-live="polite"></p>
+      <p id="browse-error" class="error" role="alert" hidden></p>
       <ul id="browse-list" class="card-list"></ul>
+      <div class="results-actions" aria-label="Catalog pages"><button type="button" id="browse-prev" class="btn btn-secondary" disabled>Previous page</button><button type="button" id="browse-next" class="btn btn-secondary" disabled>Next page</button></div>
       <div class="results-actions">
         <button type="button" class="btn btn-primary" id="browse-to-results" hidden>Back to my matches</button>
         <button type="button" class="btn btn-secondary" id="browse-start">Take the quiz</button>
@@ -146,7 +158,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>Student prototype for EDSGN 367 - not an official Penn State site.</p>
+    <p>Independent student project for EDSGN 367 — not an official Penn State site.</p>
   </footer>
 
   <!-- Original hat icon (simple shapes, reused via <use>) -->

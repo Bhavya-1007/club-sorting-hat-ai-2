@@ -1,0 +1,377 @@
+{
+  "checkedAt": "2026-11-18",
+  "results": [
+    {
+      "url": "https://discover.psu.edu/organization/creativewritingclub",
+      "status": 200,
+      "finalUrl": "https://discover.psu.edu/organization/creativewritingclub",
+      "title": " - Penn State Discover",
+      "textFile": "test-results/source-audit/1.txt",
+      "javascriptOnly": true,
+      "length": 73
+    },
+    {
+      "url": "https://discover.psu.edu/organization/penn-state-university-economics-association",
+      "status": 200,
+      "finalUrl": "https://discover.psu.edu/organization/penn-state-university-economics-association",
+      "title": " - Penn State Discover",
+      "textFile": "test-results/source-audit/2.txt",
+      "javascriptOnly": true,
+      "length": 73
+    },
+    {
+      "url": "https://discover.psu.edu/organization/pennstatefrenchclub",
+      "status": 200,
+      "finalUrl": "https://discover.psu.edu/organization/pennstatefrenchclub",
+      "title": " - Penn State Discover",
+      "textFile": "test-results/source-audit/3.txt",
+      "javascriptOnly": true,
+      "length": 73
+    },
+    {
+      "url": "https://discover.psu.edu/organization/germanclub",
+      "status": 200,
+      "finalUrl": "https://discover.psu.edu/organization/germanclub",
+      "title": " - Penn State Discover",
+      "textFile": "test-results/source-audit/4.txt",
+      "javascriptOnly": true,
+      "length": 73
+    },
+    {
+      "url": "https://la.psu.edu/beyond-the-classroom/student-organizations/",
+      "status": 200,
+      "finalUrl": "https://la.psu.edu/beyond-the-classroom/student-organizations/",
+      "title": "Student Organizations | College of the Liberal Arts",
+      "textFile": "test-results/source-audit/0.txt",
+      "javascriptOnly": false,
+      "length": 20936
+    },
+    {
+      "url": "https://discover.psu.edu/organization/cies",
+      "status": 200,
+      "finalUrl": "https://discover.psu.edu/organization/cies",
+      "title": " - Penn State Discover",
+      "textFile": "test-results/source-audit/5.txt",
+      "javascriptOnly": true,
+      "length": 73
+    },
+    {
+      "url": "https://abe.psu.edu/undergraduate/resources/clubs-and-organizations",
+      "status": 200,
+      "finalUrl": "https://abe.psu.edu/undergraduate/resources/clubs-and-organizations",
+      "title": "Clubs and Organizations — Undergraduate — Department of Agricultural and Biological Engineering",
+      "textFile": "test-results/source-audit/7.txt",
+      "javascriptOnly": false,
+      "length": 4056
+    },
+    {
+      "url": "https://inclusion.engr.psu.edu/student-resources/student-organizations.aspx",
+      "status": 200,
+      "finalUrl": "https://inclusion.engr.psu.edu/student-resources/student-organizations.aspx",
+      "title": "student-organizations | Penn State Engineering",
+      "textFile": "test-results/source-audit/6.txt",
+      "javascriptOnly": false,
+      "length": 7185
+    },
+    {
+      "url": "https://www.psu.edu/news/arts-and-entertainment/story/helping-harmonies",
+      "status": 200,
+      "finalUrl": "https://www.psu.edu/news/arts-and-entertainment/story/helping-harmonies",
+      "title": "Helping harmonies | Penn State University",
+      "textFile": "test-results/source-audit/9.txt",
+      "javascriptOnly": false,
+      "length": 4848
+    },
+    {
+      "url": "https://sites.psu.edu/musicservice/",
+      "status": 200,
+      "finalUrl": "https://sites.psu.edu/musicservice/",
+      "title": "Music Service Club  &#8211; Penn State University",
+      "textFile": "test-results/source-audit/10.txt",
+      "javascriptOnly": false,
+      "length": 449
+    },
+    {
+      "url": "https://arts.psu.edu/academics/school-of-music/music-ensembles",
+      "status": 200,
+      "finalUrl": "https://arts.psu.edu/academics/school-of-music/music-ensembles",
+      "title": "\n\t\t\tMusic Ensembles - \n\t\tCollege of Arts &amp; Architecture\n",
+      "textFile": "test-results/source-audit/8.txt",
+      "javascriptOnly": false,
+      "length": 41261
+    },
+    {
+      "url": "https://agsci.psu.edu/students/clubs/list/student-clubs/student-farm-club",
+      "status": 200,
+      "finalUrl": "https://agsci.psu.edu/students/clubs/list/student-clubs/student-farm-club",
+      "title": "Student Farm Club at University Park — Students — Penn State College of Agricultural Sciences",
+      "textFile": "test-results/source-audit/11.txt",
+      "javascriptOnly": false,
+      "length": 5052
+    },
+    {
+      "url": "https://www.psu.edu/news/agricultural-sciences/story/student-government-leaders-give-voice-college-agricultural-sciences",
+      "status": 200,
+      "finalUrl": "https://www.psu.edu/news/agricultural-sciences/story/student-government-leaders-give-voice-college-agricultural-sciences",
+      "title": "Student government leaders give voice to College of Agricultural Sciences | Penn State University",
+      "textFile": "test-results/source-audit/14.txt",
+      "javascriptOnly": false,
+      "length": 5239
+    },
+    {
+      "url": "https://studentaffairs.psu.edu/support-safety/care-concern/basic-needs",
+      "status": 200,
+      "finalUrl": "https://studentaffairs.psu.edu/support-safety/care-concern/basic-needs",
+      "title": "Basic Needs | Penn State Student Affairs",
+      "textFile": "test-results/source-audit/12.txt",
+      "javascriptOnly": false,
+      "length": 12824
+    },
+    {
+      "url": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "status": 200,
+      "finalUrl": "https://asian.la.psu.edu/initiatives-and-institutes/south-asian-studies-at-penn-state/student-resources/",
+      "title": "Student Resources - Department of Asian Studies",
+      "textFile": "test-results/source-audit/16.txt",
+      "javascriptOnly": false,
+      "length": 4080
+    },
+    {
+      "url": "https://www.foodrecovery.psu.edu/",
+      "status": 200,
+      "finalUrl": "https://www.foodrecovery.psu.edu/",
+      "title": "Food Recovery Network @ Penn State | Recovering food for greater use",
+      "textFile": "test-results/source-audit/13.txt",
+      "javascriptOnly": false,
+      "length": 1170
+    },
+    {
+      "url": "https://discover.psu.edu/organization/gble",
+      "status": 200,
+      "finalUrl": "https://discover.psu.edu/organization/gble",
+      "title": " - Penn State Discover",
+      "textFile": "test-results/source-audit/18.txt",
+      "javascriptOnly": true,
+      "length": 73
+    },
+    {
+      "url": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "status": 200,
+      "finalUrl": "https://www.aero.psu.edu/academics/resources/student-organizations.aspx",
+      "title": "Aerospace Engineering | Student Organizations | Penn State Engineering",
+      "textFile": "test-results/source-audit/15.txt",
+      "javascriptOnly": false,
+      "length": 10063
+    },
+    {
+      "url": "https://discover.psu.edu/organization/international-affairs-and-debate-association",
+      "status": 200,
+      "finalUrl": "https://discover.psu.edu/organization/international-affairs-and-debate-association",
+      "title": " - Penn State Discover",
+      "textFile": "test-results/source-audit/19.txt",
+      "javascriptOnly": true,
+      "length": 73
+    },
+    {
+      "url": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "status": 200,
+      "finalUrl": "https://www.psu.edu/news/student-affairs/story/six-penn-state-club-sports-teams-win-national-championships",
+      "title": "Six Penn State club sports teams win national championships | Penn State University",
+      "textFile": "test-results/source-audit/17.txt",
+      "javascriptOnly": false,
+      "length": 3113
+    },
+    {
+      "url": "https://discover.psu.edu/organization/italian-student-society",
+      "status": 200,
+      "finalUrl": "https://discover.psu.edu/organization/italian-student-society",
+      "title": " - Penn State Discover",
+      "textFile": "test-results/source-audit/20.txt",
+      "javascriptOnly": true,
+      "length": 73
+    },
+    {
+      "url": "https://discover.psu.edu/organization/ja",
+      "status": 200,
+      "finalUrl": "https://discover.psu.edu/organization/ja",
+      "title": " - Penn State Discover",
+      "textFile": "test-results/source-audit/21.txt",
+      "javascriptOnly": true,
+      "length": 73
+    },
+    {
+      "url": "https://discover.psu.edu/organization/mula",
+      "status": 200,
+      "finalUrl": "https://discover.psu.edu/organization/mula",
+      "title": " - Penn State Discover",
+      "textFile": "test-results/source-audit/23.txt",
+      "javascriptOnly": true,
+      "length": 73
+    },
+    {
+      "url": "https://discover.psu.edu/organization/kalliope",
+      "status": 200,
+      "finalUrl": "https://discover.psu.edu/organization/kalliope",
+      "title": " - Penn State Discover",
+      "textFile": "test-results/source-audit/22.txt",
+      "javascriptOnly": true,
+      "length": 73
+    },
+    {
+      "url": "https://discover.psu.edu/organization/multicultural-womens-forum",
+      "status": 404,
+      "finalUrl": "https://discover.psu.edu/notfound",
+      "title": "Not Found - Penn State Discover",
+      "textFile": "test-results/source-audit/24.txt",
+      "javascriptOnly": true,
+      "length": 339
+    },
+    {
+      "url": "https://sites.psu.edu/urbangamingclub/",
+      "status": 200,
+      "finalUrl": "https://sites.psu.edu/urbangamingclub/",
+      "title": "Urban Gaming Club at Penn State | &#8211; Live Action Gaming Since 2006 &#8211;",
+      "textFile": "test-results/source-audit/27.txt",
+      "javascriptOnly": false,
+      "length": 2563
+    },
+    {
+      "url": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "status": 200,
+      "finalUrl": "https://hhd.psu.edu/undergraduate/student-organizations",
+      "title": "Student Organizations | Penn State College of Health and Human Development",
+      "textFile": "test-results/source-audit/25.txt",
+      "javascriptOnly": false,
+      "length": 63549
+    },
+    {
+      "url": "https://iscpennstate.psu.edu/",
+      "status": 200,
+      "finalUrl": "https://iscpennstate.psu.edu/",
+      "title": "International Student Council | we are penn state !!",
+      "textFile": "test-results/source-audit/28.txt",
+      "javascriptOnly": false,
+      "length": 2791
+    },
+    {
+      "url": "https://www.psu.edu/news/arts-and-entertainment/story/pennharmonics-hold-spring-cappella-concert-senior-send-april-8",
+      "status": 200,
+      "finalUrl": "https://www.psu.edu/news/arts-and-entertainment/story/pennharmonics-hold-spring-cappella-concert-senior-send-april-8",
+      "title": "The Pennharmonics to hold spring a cappella concert, senior send-off April 8 | Penn State University",
+      "textFile": "test-results/source-audit/29.txt",
+      "javascriptOnly": false,
+      "length": 980
+    },
+    {
+      "url": "https://bellisario.psu.edu/current/student-organizations",
+      "status": 200,
+      "finalUrl": "https://bellisario.psu.edu/current/student-organizations",
+      "title": "Student Organizations - Bellisario College of Communications",
+      "textFile": "test-results/source-audit/30.txt",
+      "javascriptOnly": false,
+      "length": 13448
+    },
+    {
+      "url": "https://www.psu.edu/news/students/story/blue-and-white-society-host-ps-i",
+      "status": 200,
+      "finalUrl": "https://www.psu.edu/news/students/story/blue-and-white-society-host-ps-i",
+      "title": "Blue and White Society to host &#x27;PS i",
+      "textFile": "test-results/source-audit/31.txt",
+      "javascriptOnly": false,
+      "length": 2108
+    },
+    {
+      "url": "https://www.spa.psu.edu/join/",
+      "status": 200,
+      "finalUrl": "https://www.spa.psu.edu/join/",
+      "title": "Join | Student Programming Association at Penn State",
+      "textFile": "test-results/source-audit/26.txt",
+      "javascriptOnly": false,
+      "length": 5757
+    },
+    {
+      "url": "https://sites.psu.edu/pennstatepowerlifting/join-the-team/",
+      "status": 200,
+      "finalUrl": "https://sites.psu.edu/pennstatepowerlifting/join-the-team/",
+      "title": "Join the Team! &#8211; Penn State Powerlifting",
+      "textFile": "test-results/source-audit/32.txt",
+      "javascriptOnly": false,
+      "length": 1309
+    },
+    {
+      "url": "https://awc.cse.psu.edu/",
+      "status": 200,
+      "finalUrl": "https://awc.cse.psu.edu/",
+      "title": "AWC | Association of Women in Computing",
+      "textFile": "test-results/source-audit/34.txt",
+      "javascriptOnly": false,
+      "length": 3952
+    },
+    {
+      "url": "https://acm.psu.edu/",
+      "status": 200,
+      "finalUrl": "https://acm.psu.edu/",
+      "title": "Penn State ACM | &lt;ACM&gt;",
+      "textFile": "test-results/source-audit/35.txt",
+      "javascriptOnly": false,
+      "length": 1200
+    },
+    {
+      "url": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "status": 200,
+      "finalUrl": "https://www.eecs.psu.edu/students/undergraduate/Organizations.aspx",
+      "title": "EECS - Undergraduate Student Organizations | Penn State Engineering",
+      "textFile": "test-results/source-audit/33.txt",
+      "javascriptOnly": false,
+      "length": 8374
+    },
+    {
+      "url": "https://discover.psu.edu/organization/nittany-data-labs",
+      "status": 200,
+      "finalUrl": "https://discover.psu.edu/organization/nittany-data-labs",
+      "title": " - Penn State Discover",
+      "textFile": "test-results/source-audit/36.txt",
+      "javascriptOnly": true,
+      "length": 73
+    },
+    {
+      "url": "https://cpsse.psu.edu/club/enactus-university-park-0",
+      "error": "TypeError"
+    },
+    {
+      "url": "https://cpsse.psu.edu/club/happy-valley-vc",
+      "error": "TypeError"
+    },
+    {
+      "url": "https://cpsse.psu.edu/club/nittany-entrepreneur-society",
+      "status": 200,
+      "finalUrl": "https://cpsse.psu.edu/club/nittany-entrepreneur-society",
+      "title": "Nittany Entrepreneur Society | Center for Penn State Student Entrepreneurship",
+      "textFile": "test-results/source-audit/41.txt",
+      "javascriptOnly": false,
+      "length": 3165
+    },
+    {
+      "url": "https://sites.psu.edu/roboticsclub/",
+      "status": 200,
+      "finalUrl": "https://sites.psu.edu/roboticsclub/",
+      "title": "PSU Robotics Club |",
+      "textFile": "test-results/source-audit/38.txt",
+      "javascriptOnly": false,
+      "length": 997
+    },
+    {
+      "url": "https://nittanyai.psu.edu/get-involved/students",
+      "status": 200,
+      "finalUrl": "https://nittanyai.psu.edu/get-involved/students",
+      "title": "\n\t    Students - Nittany AI Alliance\n",
+      "textFile": "test-results/source-audit/42.txt",
+      "javascriptOnly": false,
+      "length": 3119
+    },
+    {
+      "url": "https://sites.psu.edu/uaspennstate/",
+      "error": "TypeError"
+    }
+  ]
+}
